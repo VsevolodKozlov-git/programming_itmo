@@ -1,4 +1,5 @@
 import typing as tp
+#97-122
 
 
 def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
@@ -15,7 +16,19 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     ''
     """
     ciphertext = ""
-    # PUT YOUR CODE HERE
+    for c in plaintext:
+        if not c.isalpha():
+            ciphertext += c
+            continue
+        num = ord(c.lower()) + shift
+        while num > 122:
+            num -= 26
+        if c.isupper():
+            new_chr = chr(num).upper()
+        else:
+            new_chr = chr(num)
+        ciphertext += new_chr
+
     return ciphertext
 
 
@@ -33,7 +46,18 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     ''
     """
     plaintext = ""
-    # PUT YOUR CODE HERE
+    for c in ciphertext:
+        if not c.isalpha():
+            plaintext += c
+            continue
+        num = ord(c.lower()) - shift
+        while num < 97:
+            num += 26
+        if c.isupper():
+            new_chr = chr(num).upper()
+        else:
+            new_chr = chr(num)
+        plaintext += new_chr
     return plaintext
 
 
