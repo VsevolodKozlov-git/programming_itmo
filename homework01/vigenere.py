@@ -74,6 +74,3 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
 
     return plaintext
 
-
-if __name__ == '__main__':
-    print(decrypt_vigenere("LXFOPVEFRNHR", "LEMON"))
