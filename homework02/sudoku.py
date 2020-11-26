@@ -173,18 +173,6 @@ def check_solution(solution: List[List[str]]) -> bool:
     return True
 
 
-def find_random_position(grid):
-    rand_row_ind = random.randrange(9)
-    rand_col_ind = random.randrange(9)
-    for row_ind in range(rand_row_ind, rand_row_ind+9):
-        for col_ind in range(rand_col_ind, rand_col_ind + 9):
-            row_ind %= 9
-            col_ind %= 9
-            if grid[row_ind][col_ind] == '.':
-                return row_ind, col_ind
-
-    return None
-
 def generate_sudoku(N: int) -> List[List[str]]:
     """ Генерация судоку заполненного на N элементов
 
@@ -210,7 +198,6 @@ def generate_sudoku(N: int) -> List[List[str]]:
     if N > 81:
         N = 81
     grid = solve([['.'] * 9 for i in range(9)])
-    print(grid)
     all_positions = [(row, col) for row in range(9) for col in range(9)]
     delete_positions = random.sample(all_positions, 81 - N)
     for del_pos in delete_positions:
@@ -219,14 +206,11 @@ def generate_sudoku(N: int) -> List[List[str]]:
 
 
 if __name__ == '__main__':
-    display(generate_sudoku(30))
-
-# if __name__ == '__main__':
-#     for fname in ['puzzle1.txt', 'puzzle2.txt', 'puzzle3.txt']:
-#         grid = read_sudoku(fname)
-#         display(grid)
-#         solution = solve(grid)
-#         if not solution:
-#             print(f"Puzzle {fname} can't be solved")
-#         else:
-#             display(solution)
+    for fname in ['puzzle1.txt', 'puzzle2.txt', 'puzzle3.txt']:
+        grid = read_sudoku(fname)
+        display(grid)
+        solution = solve(grid)
+        if not solution:
+            print(f"Puzzle {fname} can't be solved")
+        else:
+            display(solution)
