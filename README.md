@@ -1,3 +1,6 @@
-# Шаблоны заданий для [практикума по Питону](https://github.com/Dementiy/Dementiy.github.io)
+# Репозиторий для дз по программированию
 
-Шаблоны представлены на двух языках: Python и Go. Шаблоны для Go расположены в папках homework#-go.
+homework1 - алгоритмы шифрования </br>
+homework2 - судоку </br>
+python_oop - домашнее задание по ООП в python </br>
+homework3 - Conway's Game of Life </br>
