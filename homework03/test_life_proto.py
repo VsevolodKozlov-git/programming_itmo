@@ -2,7 +2,7 @@ import unittest
 import random
 import json
 
-from life_proto import GameOfLife
+from programming_itmo.homework03.life_proto import GameOfLife
 
 
 class TestGameOfLife(unittest.TestCase):

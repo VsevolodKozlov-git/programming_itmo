@@ -1,7 +1,7 @@
 import curses
 
-from life import GameOfLife
-from ui import UI
+from programming_itmo.homework03.life import GameOfLife
+from programming_itmo.homework03.ui import UI
 
 
 class Console(UI):
