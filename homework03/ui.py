@@ -1,6 +1,6 @@
 import abc
 
-from life import GameOfLife
+from programming_itmo.homework03.life import GameOfLife
 
 
 class UI(abc.ABC):
@@ -8,6 +8,7 @@ class UI(abc.ABC):
     def __init__(self, life: GameOfLife) -> None:
         self.life = life
 
-    @abc.abstractmethod:
+    @abc.abstractmethod
     def run(self) -> None:
         pass
+

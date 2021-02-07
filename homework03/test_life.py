@@ -2,7 +2,7 @@ import unittest
 import random
 import json
 
-from life import GameOfLife
+from programming_itmo.homework03.life import GameOfLife
 
 
 class TestGameOfLife(unittest.TestCase):
@@ -121,8 +121,14 @@ class TestGameOfLife(unittest.TestCase):
         game.curr_generation = self.grid
         for _ in range(max_generations-1):
             game.step()
-        self.assertEqual(game.n_generation, max_generations)
-        self.assertTrue(game.is_max_generations_exceed)
+        # В моей версии репозитория(устравешей) была опечатка, которая была исправлена в
+        # более новой версии тестов. Вот подтверждение:
+        # https://github.com/Dementiy/pybook-assignments/blob/master/homework03/tests/test_life.py
+        # опечатки:
+        # game.n_generation вместо game.generations
+        # game.is_max_generations_exceed вместо game.is_max_generations_exceeded
+        self.assertEqual(game.generations, max_generations)
+        self.assertTrue(game.is_max_generations_exceeded)
 
     def test_is_changing(self):
         game = GameOfLife((self.rows, self.cols))

@@ -1,8 +1,8 @@
 import pygame
 from pygame.locals import *
 
-from life import GameOfLife
-from ui import UI
+from programming_itmo.homework03.life import GameOfLife
+from programming_itmo.homework03.ui import UI
 
 
 class GUI(UI):
