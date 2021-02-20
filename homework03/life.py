@@ -71,6 +71,9 @@ class GameOfLife:
         self.curr_generation = self.get_next_generation()
         self.generations += 1
 
+    def toggle_grid_element(self, row, col):
+        val = self.curr_generation[row][col]
+        self.curr_generation[row][col] = int(val != 1)
 
     @property
     def is_max_generations_exceeded(self) -> bool:

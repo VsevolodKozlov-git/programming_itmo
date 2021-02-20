@@ -12,7 +12,7 @@ Grid = List[Cells]
 
 class GameOfLife:
 
-    def __init__(self, width: int=640, height: int=480, cell_size: int=10, speed: int=10) -> None:
+    def __init__(self, width: int = 640, height: int = 480, cell_size: int = 10, speed: int = 10) -> None:
         self.width = width
         self.height = height
         self.cell_size = cell_size
@@ -33,10 +33,10 @@ class GameOfLife:
         """ Отрисовать сетку """
         for x in range(0, self.width, self.cell_size):
             pygame.draw.line(self.screen, pygame.Color('black'),
-                    (x, 0), (x, self.height))
+                             (x, 0), (x, self.height))
         for y in range(0, self.height, self.cell_size):
             pygame.draw.line(self.screen, pygame.Color('black'),
-                    (0, y), (self.width, y))
+                             (0, y), (self.width, y))
 
     def run(self) -> None:
         """ Запустить игру """
@@ -63,7 +63,7 @@ class GameOfLife:
             clock.tick(self.speed)
         pygame.quit()
 
-    def create_grid(self, randomize: bool=False) -> Grid:
+    def create_grid(self, randomize: bool = False) -> Grid:
         """
         Создание списка клеток.
 
@@ -124,7 +124,7 @@ class GameOfLife:
         st_row = row - 1 + int(row == 0)
         st_col = col - 1 + int(col == 0)
         en_row = (row + 1) - int(row == self.cell_height - 1)
-        en_col = (col + 1) - int(col == self.cell_width -1)
+        en_col = (col + 1) - int(col == self.cell_width - 1)
         res = []
         # Проходим по всем доступным ячейкам
         for for_row in range(st_row, en_row + 1):
